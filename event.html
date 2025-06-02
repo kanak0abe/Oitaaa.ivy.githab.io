@@ -1,0 +1,103 @@
+<!-- event.html - イベント詳細ページ -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>イベント情報 - 道の駅 Oitaaa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎪 イベント情報</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="#spring">春</a></li>
+        <li><a href="#summer">夏</a></li>
+        <li><a href="#autumn">秋</a></li>
+        <li><a href="#winter">冬</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="spring" class="section">
+      <h2>🌸 春のイベント</h2>
+      <p>3月：さくら祭り、地元特産品販売<br>4月：手作り体験ワークショップ</p>
+    </section>
+
+    <section id="summer" class="section">
+      <h2>🌻 夏のイベント</h2>
+      <p>7月：地元夏祭り<br>8月：夜市＆花火大会</p>
+    </section>
+
+    <section id="autumn" class="section">
+      <h2>🍂 秋のイベント</h2>
+      <p>10月：収穫祭・お芋掘り体験<br>11月：工芸品展示販売</p>
+    </section>
+
+    <section id="winter" class="section">
+      <h2>⛄ 冬のイベント</h2>
+      <p>12月：クリスマスマルシェ<br>1月：新年もちつき大会</p>
+    </section>
+
+    <div class="back-link">
+      <a href="index.html">← ホームへ戻る</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 道の駅 Oitaaa. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
+
+
+<!-- contact.html - お問い合わせページ -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ - 道の駅 Oitaaa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📬 お問い合わせ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="event.html">イベント情報</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>お気軽にお問い合わせください</h2>
+      <form action="#" method="post">
+        <label for="name">お名前:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">メールアドレス:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">お問い合わせ内容:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+        <button type="submit">送信</button>
+      </form>
+    </section>
+
+    <div class="back-link">
+      <a href="index.html">← ホームへ戻る</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 道の駅 Oitaaa. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
