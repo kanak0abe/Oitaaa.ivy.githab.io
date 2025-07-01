@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>道の駅 Oitaaa - お問い合わせ</title>
+    <meta name="description" content="道の駅 Oitaaaへのお問い合わせページです。メールフォームとお電話での連絡先をご案内しています。" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <a id="page-top"></a>
+    <header>
+        <h1>🌸道の駅 Oitaaa🌸</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="facility.html">施設紹介</a></li>
+                <li><a href="shop.html">グルメ</a></li>
+                <li><a href="event.html">イベント</a></li>
+                <li><a href="access.html">アクセス</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="mail-contact" class="section contact-form-section">
+            <h2>📩 メールでのお問い合わせ</h2>
+            <p class="section-description">
+                ご意見・ご質問など、こちらのフォームよりお気軽にお問い合わせください。<br class="pc-only">
+                通常3営業日以内にご返信いたします。
+            </p>
+            <form action="#" method="post">
+                <label for="name">お名前 <span class="required">(必須)</span></label>
+                <input type="text" id="name" name="name" required placeholder="例：大分 大好" aria-required="true">
+
+                <label for="email">メールアドレス <span class="required">(必須)</span></label>
+                <input type="email" id="email" name="email" required placeholder="例：your-email@example.com" aria-required="true">
+
+                <label for="subject">件名 (任意)</label>
+                <input type="text" id="subject" name="subject" placeholder="例：イベントの詳細について">
+
+                <label for="message">お問い合わせ内容 <span class="required">(必須)</span></label>
+                <textarea id="message" name="message" rows="7" required placeholder="お問い合わせ内容を具体的にご記入ください。" aria-required="true"></textarea>
+
+                <button type="submit">送信する</button>
+            </form>
+        </section>
+
+        <section id="phone-contact" class="section phone-contact-section">
+            <h2>📞 お電話でのお問い合わせ</h2>
+            <p class="section-description">
+                お電話でもお問い合わせを受け付けております。<br class="pc-only">
+                お急ぎの方はこちらをご利用ください。
+            </p>
+            <div class="tel-info-box">
+                <p class="tel-time">営業時間：8:30～18:00（年末年始を除く）</p>
+                <div class="contact-tel">
+                    <a href="tel:0000111222">TEL. 0000-111-222</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="index.html" class="back-home-link"><i class="fas fa-house"></i> ホームへ戻る</a>
+        </div>
+        <p class="copyright">© 2025 道の駅 Oitaaa(架空の道の駅のHP)</p>
+    </footer>
+
+    <a href="#page-top" id="scroll-to-top" title="ページトップへ戻る">
+        <i class="fas fa-arrow-circle-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

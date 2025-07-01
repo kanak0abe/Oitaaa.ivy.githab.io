@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>道の駅 Oitaaa - ショップ</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+<header>
+<h1>🌸道の駅 Oitaaa🌸</h1>
+<nav>
+<ul>
+<li><a href="index.html">ホーム</a></li>
+<li><a href="index.html#facility">施設紹介</a></li>
+<li><a href="index.html#gourmet">グルメ</a></li>
+<li><a href="index.html#event">イベント</a></li>
+<li><a href="index.html#access">アクセス</a></li>
+<li><a href="contact.html">お問い合わせ</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="section">
+<h2>🛍 グルメ＆ショップ紹介</h2>
+<img src="img/food1.png" alt="poster1" class="main-image"/>
+<p>道の駅 Oitaaa のショップでは、地元大分の魅力が詰まった特産品を取り揃えています。</p>
+
+<h3>🍊 新鮮な農産物</h3>
+<p>朝採れ野菜や果物を毎日直送！旬の味をぜひご家庭で。</p>
+
+<h3>🥫 加工品・お土産</h3>
+<p>地元の味噌や柚子胡椒、オリジナルパッケージのスイーツも大人気！</p>
+
+<h3>🍰 お食事処</h3>
+<p>郷土料理の「だんご汁」や地元焙煎の「コーヒー」などもあります。</p>
+<p>ホッと一息、ひと休みしませんか？</p>
+</section>
+</main>
+
+<footer>
+<p style="text-align: center; margin-bottom: 0.5rem;">
+<a href="index.html">
+<i class="fas fa-house"></i> ホームへ戻る
+</a>
+</p>
+<p style="text-align: center;">&copy; 2025 道の駅 Oitaaa(架空の道の駅のHP)</p>
+</footer>
+
+    <a href="#page-top" id="scroll-to-top" title="ページトップへ戻る">
+        <i class="fas fa-arrow-circle-up"></i>
+    </a>
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+            // ページロード時にボタンを非表示にする
+            scrollToTopBtn.style.display = 'none';
+
+            // スクロールイベントを監視
+            window.addEventListener('scroll', () => {
+                // 300pxスクロールしたらボタンを表示、そうでなければ非表示
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+
+            // ボタンクリックでトップへスムーズスクロール
+            scrollToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault(); // デフォルトのアンカーリンク動作を無効化
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // スムーズスクロール
+                });
+            });
+        });
+</script>
+</body>
+</html>

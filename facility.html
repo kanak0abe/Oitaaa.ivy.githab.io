@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>施設紹介 - 道の駅 Oitaaa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <a id="page-top"></a>
+  <header>
+    <h1>🏠 施設紹介</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#facility">施設紹介</a></li>
+        <li><a href="index.html#gourmet">グルメ</a></li>
+        <li><a href="index.html#event">イベント</a></li>
+        <li><a href="index.html#access">アクセス</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="facility" class="section">
+      <h2>🏠 施設紹介</h2>
+      <img src="img/oitaaa.png" alt="道の駅 Oitaaaの施設外観" class="shop-image"/>
+      <p>広々とした駐車場、清潔なトイレ、休憩スペースも完備～ 地元特産品の直売所も大人気！</p>
+      <p>愛犬(ペット)ともご一緒に♪♪</p>
+      <img src="img/asiyu2.png" alt="道の駅 Oitaaaの施設" class="yu-image"/>
+      <p>おんせん県Oitaa！無料の足湯温泉もあります♪</p>
+      <p>☆最新情報は、Xやインスタグラムをどうぞ</p>
+      </section>
+  </main>
+
+  <footer>
+    <div class="back-link">
+      <a href="index.html"><i class="fas fa-home"></i> ホームへ戻る</a>
+    </div>
+
+    <p>© 2025 道の駅 Oitaaa(架空の道の駅のHP)</p>
+  </footer>
+
+  <a href="#page-top" id="scroll-to-top" title="ページトップへ戻る">
+    <i class="fas fa-arrow-circle-up"></i>
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the scroll to top button
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        // Smooth scroll to top when button is clicked
+        scrollToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smooth scroll animation
+            });
+        });
+    });
+  </script>
+
+</body>
+</html>

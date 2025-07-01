@@ -1,95 +1,941 @@
-/* ポップで明るい配色・フォント設定 */
+/* ===== **全体の基本スタイル** ===== */
 body {
-  font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fff8f0;
-  color: #333;
-  line-height: 1.6;
+    font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f0; /* 薄いピーチ色 */
+    color: #cc3366; /* 濃いピンク (この色はメインの見出しなどに影響します) */
+    line-height: 1.6;
 }
 
+/* ===== **ヘッダー** ===== */
 header {
-  background-color: #ff77a9;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #ff77a9; /* 明るいピンク */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative; /* 子要素の絶対位置指定の基準とする（今回は不要ですが、他の要素で使う可能性を考慮）*/
 }
-
 header h1 {
-  margin: 0;
-  font-size: 2rem;
+    margin: 0;
+    font-size: 2rem;
 }
 
+/* ===== **BGMトグルボタン** ===== */
+#bgm-toggle {
+    position: fixed; /* 画面に固定 */
+    top: 15px; /* 上からの距離 */
+    right: 15px; /* 右からの距離 */
+    z-index: 1000; /* 他の要素の上に表示されるようにする */
+    background-color: #ff77a9;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 0.3rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.9rem; /* PCサイズでの調整 */
+}
+#bgm-toggle[aria-pressed="true"] {
+    background-color: #ff4e94;
+}
+#bgm-toggle:focus {
+    outline: 3px solid #ff77a9;
+    outline-offset: 2px;
+}
+
+/* ===== **ナビゲーション** ===== */
 nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0.5rem;
-  gap: 1rem;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem; /* BGMボタンの位置を固定したので、header内部の他の要素との調整は別途考慮 */
 }
-
 nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  transition: background 0.3s;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.3); /* 透明感のある白 */
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background 0.3s;
 }
-
 nav a:hover {
-  background: white;
-  color: #ff77a9;
+    background: white;
+    color: #ff77a9; /* 明るいピンク */
 }
 
+/* ===== **ヒーローセクション** ===== */
 .hero {
-  background: url('images/hero.jpg') center/cover no-repeat;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-shadow: 1px 1px 3px #000;
+    /* ヒーロー画像は別途用意してください（例: images/hero.jpg） */
+    /* background: url('images/hero.jpg') center/cover no-repeat; */
+    /* 暫定的に背景色を設定。画像パスは適切に設定してください */
+    background: #ffc0cb; /* 薄いピンクの代替色 */
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* 文字の影は残して視認性を確保 */
 }
-
 .hero-text h2 {
-  font-size: 2.2rem;
-  margin: 0;
+    font-size: 2.2rem;
+    margin: 0;
+    color: #ed6cc2; /* 薄いピンクに変更 */
+}
+.hero-text p {
+    color: #e3d01f; /* 薄い緑に変更 */
+    font-size: 1.4rem; /* 「～ゆったり～」の文字を少し大きくしました */
 }
 
+/* ===== **メインコンテンツ** ===== */
 main {
-  padding: 2rem 1rem;
+    padding: 2rem 1rem;
 }
 
+/* ===== **セクション共通スタイル** ===== */
 .section {
-  max-width: 800px;
-  margin: 2rem auto;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  padding: 1.5rem;
-  text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    text-align: center;
 }
-
 .section h2 {
-  color: #ff77a9;
-  font-size: 1.6rem;
+    color: #ff77a9; /* 明るいピンク */
+    font-size: 1.6rem;
 }
-
+.section h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
 .section img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  margin: 1rem 0;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 1rem 0;
 }
 
+/* 各セクションの説明テキスト */
+.section-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* ===== **季節セクションの区切りスタイル** ===== */
+/* #yearly-events 内の各季節セクションに適用 */
+.section.sub-season-section {
+    margin-top: 1.5rem; /* 上部に余白を追加して区切りを明確に */
+    padding-top: 1.5rem; /* 内部のパディングも調整 */
+    border-top: 1px dashed #ffc0cb; /* 細い点線ボーダーで区切り */
+    /* background-color: #fffaf0; /* 必要であれば、少し異なる背景色を適用 */
+}
+
+/* 「四季のイベント」内の最初の季節セクションには上ボーダーを適用しない */
+#yearly-events .section.sub-season-section:first-of-type {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 1.5rem; /* このセクション自身のpaddingは維持 */
+}
+
+/* ===== **イベント情報** ===== */
+
+/* 今月のイベント */
+#this-month-event {
+    background-color: #fff9db; /* 薄い黄色 */
+    border: 2px solid #f7d859; /* 黄色系の枠線 */
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    color: #665500;
+}
+
+/* 恒例イベントセクション */
+#monthly-regular-events {
+    background-color: #fafafa; /* 薄いグレー */
+    /* 薄い紫系の枠線 */
+    border: 2px solid #C0B0D8;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+/* 恒例イベント内リストの装飾調整 */
+#monthly-regular-events ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#monthly-regular-events li {
+    background: #ffe6f0; /* 薄いピンク */
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(204, 51, 102, 0.15);
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.8rem;
+    color: #800040;
+}
+
+#monthly-regular-events strong {
+    color: #007bff;
+}
+
+/* 四季のイベント全体セクション */
+#yearly-events {
+    background-color: #fff3e0; /* 薄いオレンジ */
+    border: 2px solid #cc3366; /* ピンク系の枠線 */
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    color: #663300;
+}
+
+/* 各季節のカード（枠と背景色） */
+.sub-season-section {
+    border: 1.5px solid #cc3366;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #fff8e1; /* 少し薄めのオレンジ */
+}
+
+/* 季節ごとに色変え（お好みで調整可能） */
+#spring.sub-season-section {
+    background-color: #fff8e1; /* 薄オレンジ */
+}
+#summer.sub-season-section {
+    background-color: #fff8e1; /* 薄オレンジ */
+}
+#autumn.sub-season-section {
+    background-color: #fff8e1; /* 薄オレンジ */
+}
+#winter.sub-season-section {
+    background-color: #fff8e1; /* 薄オレンジ */
+}
+
+/* セクション見出し */
+.sub-season-section > h3 {
+    color: #cc3366;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+
+/* イベントカード（月と説明） */
+.event {
+    display: flex;
+    gap: 1rem;
+    padding: 0.6rem 1rem;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(204, 51, 102, 0.15);
+    margin-bottom: 0.8rem;
+    align-items: center;
+}
+
+/* 月 */
+.month {
+    font-weight: bold;
+    color: #cc3366;
+    min-width: 50px;
+    font-size: 1.1rem;
+    text-align: center;
+    background: #ffcee7;
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+}
+
+/* For the specific "7月20日(日)" event, remove the highlight */
+/* HTMLの該当箇所に <div class="month no-highlight">7月20日(日)</div> を適用する場合に有効です。 */
+.month.no-highlight {
+    background: none; /* 背景を削除 */
+    box-shadow: none; /* 影を削除 */
+    border: none; /* 枠線を削除 */
+    padding: 0; /* パディングを調整 */
+    color: inherit; /* 親要素から色を継承 */
+    min-width: unset; /* min-widthをリセット */
+    text-align: left; /* テキストアラインを調整 */
+}
+
+/* 内容 */
+.desc {
+    color: #800040;
+    font-size: 1rem;
+}
+
+/* YouTube動画コンテナ */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 の比率 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000; /* お好みで背景色を */
+    margin: 1rem 0; /* 上下余白も適宜 */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* 幅を親に合わせる */
+    height: 100%; /* 高さも親に合わせる */
+    border: 0;
+}
+
+/* --- お問い合わせページ固有のスタイル --- */
+
+/* お問い合わせフォームセクションの背景とボーダー */
+.contact-form-section {
+    background-color: #fce8f0; /* 薄いピンク */
+    border: 2px solid #ff77a9; /* アクセスページの枠線と合わせたピンク */
+    margin-bottom: 2rem; /* 下部に余白 */
+    padding: 2rem; /* 内側の余白を少し増やす */
+}
+
+/* お電話お問い合わせセクションの背景とボーダー */
+.phone-contact-section {
+    background-color: #e0f7ff; /* アクセスページのマップ部分の背景色に近い色 */
+    border: 2px solid #87ceeb; /* アクセスページのマップ部分の枠線と合わせた水色 */
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+/* ===== **フォーム共通** ===== */
+form {
+    background-color: #fff0f6; /* 薄いピンク */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    color: #555;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+textarea {
+    resize: vertical;
+}
+button {
+    background-color: #ff77a9; /* 明るいピンク */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover {
+    background-color: #ff4e94; /* 少し濃いピンク */
+}
+button:focus {
+    outline: 3px solid #ff77a9;
+    outline-offset: 2px;
+}
+
+/* フォームのラベルスタイル (contact.html用に追加) */
+.contact-form-section label {
+    font-weight: bold;
+    color: #555;
+    margin-top: 1rem; /* ラベルの上に少し余白 */
+    margin-bottom: 0.5rem; /* ラベルの下に少し余白 */
+    display: block; /* 各ラベルを独立した行に */
+}
+
+/* 必須マークのスタイル (contact.html用に追加) */
+.contact-form-section .required {
+    color: #d9534f; /* 赤色 */
+    font-size: 0.9em;
+    margin-left: 0.3em;
+}
+
+/* フォーム入力フィールドのスタイル (contact.html用に追加) */
+.contact-form-section input[type="text"],
+.contact-form-section input[type="email"],
+.contact-form-section input[type="subject"], /* subject も追加 */
+.contact-form-section textarea {
+    width: calc(100% - 20px); /* パディング分を考慮 */
+    padding: 10px;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ffb6c1; /* 薄いピンクのボーダー */
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08); /* わずかな凹み効果 */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* paddingとborderをwidthに含める */
+}
+
+.contact-form-section input[type="text"]:focus,
+.contact-form-section input[type="email"]:focus,
+.contact-form-section input[type="subject"]:focus,
+.contact-form-section textarea:focus {
+    border-color: #ff77a9; /* フォーカス時にピンクのボーダー */
+    box-shadow: 0 0 8px rgba(255, 119, 169, 0.4); /* フォーカス時にピンクのシャドウ */
+    outline: none; /* デフォルトのアウトラインを消す */
+}
+
+/* フォーム送信ボタンのスタイル (contact.html用に追加) */
+.contact-form-section button[type="submit"] {
+    display: block; /* 中央寄せのためにブロック要素に */
+    margin: 1.5rem auto 0; /* 上部に余白、左右中央寄せ */
+    padding: 0.8rem 2.5rem;
+    background-color: #ff77a9;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-form-section button[type="submit"]:hover {
+    background-color: #ff4e94;
+    transform: translateY(-2px); /* わずかに浮き上がる効果 */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* お電話情報ボックス (contact.html用に追加) */
+.tel-info-box {
+    text-align: center;
+    background-color: #e6f7ff; /* 薄い水色 */
+    border: 1px solid #b3e0ff; /* 薄い水色のボーダー */
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    max-width: 400px; /* ボックスの最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+}
+
+.tel-info-box .tel-time {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+
+/* ===== **リンクバック** ===== */
+.back-link {
+    text-align: center; /* 「ホームへ戻る」リンクの中央寄せ */
+    margin-top: 2rem;
+}
+.back-link a {
+    color: #ff77a9; /* 明るいピンク */
+    text-decoration: none;
+    font-weight: bold;
+}
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* `.back-to-top` のスタイルは、フッターの `back-home-link` に統合されるため、ここでは主にPC専用のページトップへの固定ボタン用として残す */
+/* contact.htmlでは使用しないが、他のページで必要な場合はこのまま残す */
+.back-to-top {
+    text-align: center; /* リンク要素を中央に寄せる */
+    margin-top: 2rem;
+    margin-bottom: 2rem; /* 必要に応じて下部の余白も調整 */
+}
+
+/* ページトップへボタンのスタイル (HTMLに存在しないため実質無効) */
+.back-to-top a {
+    display: inline-block; /* ボタンのように振る舞うため */
+    background-color: #ffc0cb; /* 薄いピンクの背景色 */
+    color: #cc3366; /* 濃いピンクの文字色 */
+    padding: 10px 20px;
+    border-radius: 25px; /* 角を丸くする */
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-top a:hover {
+    background-color: #ff77a9; /* ホバーで少し濃いピンク */
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+/* ===== **カレンダー** ===== */
+#calendar {
+    background-color: #E0F7FF; /* 薄い青に変更*/
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid #87CEEB; /* 青系の枠線に変更*/
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 1rem;
+    table-layout: fixed;
+    background-color: #fff;
+    border: 2px solid #87CEEB; /* 青系のボーダーに変更*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+/* **カレンダーのタイトル（<caption>）のスタイル** */
+.calendar caption {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #4682B4; /* 青系の見出し色に変更*/
+    padding: 1rem 0;
+    caption-side: top;
+    text-align: center;
+    background-color: #B0E0E6; /* 薄い青の背景に変更*/
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 2px solid #87CEEB; /* 下線も青系に*/
+}
+.calendar th {
+    background-color: #6495ED; /* 青系の曜日ヘッダーに変更*/
+    color: white;
+    padding: 0.6rem 0.4rem;
+    font-size: 1rem;
+    height: 40px;
+    width: 14.28%;
+    white-space: nowrap;
+}
+.calendar td {
+    border: 1px solid #ADD8E6; /* 薄い青のセルボーダーに変更*/
+    padding: 0.4rem;
+    vertical-align: top;
+    height: 100px;
+    font-size: 0.9rem;
+    position: relative;
+    width: 14.28%;
+}
+/* **日付の配置を左上に、サイズも調整** */
+.calendar .date {
+    font-weight: bold;
+    color: #333; /* 平日の日付色はグレー系を維持 */
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.2rem;
+    text-align: left; /* ★ここをrightからleftに変更★ */
+    padding-left: 0.3rem; /* ★ここをpadding-rightからpadding-leftに変更★ */
+}
+/* **イベントテキストのスタイルを強化** */
+.calendar .event {
+    font-size: 0.95rem;
+    color: #555; /* イベントテキストも少し落ち着いた色を維持 */
+    font-weight: bold;
+    margin-top: 0.2rem;
+    line-height: 1.3;
+    word-break: break-word;
+    text-align: left; /* 既にleftですが、念のため記載 */
+    background-color: #E6FFD8; /* イベントの背景を薄い緑に変更 */
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    margin-bottom: 0.2rem;
+    box-shadow: 0 1px 3px rgba(144, 238, 144, 0.3); /* 薄い緑に合うように影の色も調整 */
+}
+
+/* **曜日別のカラー** */
+/* **土曜日の背景色とボーダー、日付の色を調整（青系）** */
+.calendar td.saturday {
+    background-color: #D8EBF2; /* 薄い青に変更*/
+    border: 1px solid #A8BCC8; /* 少し濃い青に変更*/
+}
+.calendar td.saturday .date {
+    color: #367588; /* 土曜日の日付色を青系に*/
+}
+/* **日曜日の背景色とボーダー、日付の色を調整（赤系）** */
+.calendar td.sunday {
+    background-color: #F0E8F2; /* 薄い赤紫系に変更*/
+    border: 1px solid #D8A0B8; /* 少し濃い赤紫系に変更*/
+}
+.calendar td.sunday .date {
+    color: #B2568C; /* 日曜日の日付色も赤紫系に*/
+}
+/* **祝日の背景色とボーダー、日付の色を調整** */
+.calendar td.holiday {
+    background-color: #F8F0E6; /* 薄い黄土色系に変更*/
+    border: 1px solid #D8B090; /* 少し濃い黄土色系に変更*/
+}
+.calendar td.holiday .date {
+    color: #B28C56; /* 祝日の日付色も黄土色系に*/
+}
+
+/* ===== **カレンダーの「本日」強調表示スタイル** ===== */
+.calendar td.today {
+    background-color: #C1DFF0; /* 本日の背景色を少し濃い青系に*/
+    border: 2px solid #4682B4; /* 目立つボーダーも青系に*/
+    box-shadow: 0 0 8px rgba(70, 130, 180, 0.3); /* 軽い光沢も青系に*/
+}
+.calendar td.today .date {
+    color: #2A5283; /* 本日の日付色を濃い青系に*/
+    font-size: 1.1rem;
+}
+
+/* ===== **画像スタイル** ===== */
+.shop-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0.5rem 0 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: block;
+}
+
+/* ===== **ボタンスタイル（リンク用含む）** ===== */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #f48fb1; /* 中間のピンク */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #d81b60; /* 濃いピンク */
+    cursor: pointer;
+}
+
+/* ===== **フッター** ===== */
 footer {
-  background-color: #ffdce5;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #555;
+    background-color: #ffdce5; /* 最も薄いピンク */
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+footer a {
+    color: #ff77a9; /* 明るいピンク */
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* フッターのホームへ戻るリンクのスタイル */
+footer .footer-nav {
+    text-align: center;
+    margin-bottom: 1rem; /* 著作権表示との間隔 */
+}
+
+footer .back-home-link {
+    display: inline-block; /* インラインブロック要素として表示 */
+    background-color: transparent; /* 背景色を透明に */
+    color: #ff77a9; /* 明るいピンクの文字色 */
+    padding: 0; /* パディングを削除 */
+    border-radius: 0; /* 角丸を削除 */
+    text-decoration: none; /* 下線をなくす */
+    font-weight: bold;
+    box-shadow: none; /* シャドウを削除 */
+    transition: color 0.3s ease; /* ホバー時の色の変化のみ */
+}
+
+footer .back-home-link:hover {
+    background-color: transparent; /* ホバー時も背景色を透明に */
+    color: #ff4e94; /* ホバーで少し濃いピンク（お好みで調整） */
+    text-decoration: underline; /* ホバーで下線を表示 */
+    box-shadow: none; /* ホバー時もシャドウを削除 */
+}
+
+/* 著作権表示のスタイル */
+footer .copyright {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 0.5rem;
+}
+
+
+/* ===== **フッターの問い合わせブロック** ===== */
+.contact-footer {
+    background-color: #ffb6c1; /* 薄いピンク */
+    color: #333;
+    padding: 2rem 1rem;
+}
+.contact-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: flex-start;
+}
+.contact-left {
+    flex: 0 0 200px;
+    min-width: 0;
+    text-align: left;
+}
+.contact-right {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+.footer-logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.contact-right p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* **電話番号リンクのスタイル（HTMLを単一aタグ想定）** */
+.contact-tel a {
+    font-size: 2.8rem; /* PCでの表示サイズを大きく */
+    font-weight: bold;
+    color: #ff4e94; /* 濃いピンク */
+    text-decoration: none; /* 下線をなくす */
+    display: block; /* 親要素の幅いっぱいに広げ、中央寄せしやすいように */
+    text-align: center; /* 中央寄せ */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+/* HTMLで <span class="tel-label"> のような要素を使う場合は、以下のスタイルを活かしてください。
+    それ以外の場合は、このコメントアウトされたスタイルは不要です。 */
+.tel-label {
+    background: white;
+    color: #ff77a9; /* 明るいピンク */
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* スクロール to トップボタンのスタイル (contact.htmlでは使用しないが、他のページで必要なら残す) */
+#scroll-to-top {
+    position: fixed; /* 画面に固定 */
+    bottom: 20px;     /* 下からの位置 */
+    right: 20px;      /* 右からの位置 */
+    background-color: #ff77a9; /* ボタンの背景色 */
+    color: white;     /* アイコンの色 */
+    padding: 10px 15px; /* 内側の余白 */
+    border-radius: 50%; /* 丸い形にする */
+    text-align: center;
+    text-decoration: none; /* 下線を消す */
+    font-size: 24px;      /* アイコンのサイズ */
+    display: none;        /* 最初は非表示 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 影 */
+    z-index: 1000;        /* 他の要素より手前に表示 */
+    transition: opacity 0.3s, background-color 0.3s; /* フェードイン・アウトと背景色のアニメーション */
+}
+
+#scroll-to-top:hover {
+    background-color: #ff4e94; /* ホバー時の背景色 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* ===== **SNSリンクのスタイル** ===== */
+.social-links {
+    margin-top: 1rem; /* 上部に余白 */
+    margin-bottom: 1rem; /* 下部に余白 */
+    display: flex; /* 横並びにする */
+    justify-content: center; /* 中央に配置 */
+    gap: 1.5rem; /* リンク間のスペース */
+    flex-wrap: wrap; /* 狭い画面で改行できるように */
+}
+
+.social-links a {
+    display: inline-flex; /* アイコンとテキストを縦方向中央に配置 */
+    align-items: center;
+    background-color: #ffc0cb; /* 薄いピンク */
+    color: #cc3366; /* 濃いピンク */
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px; /* カプセル型に */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.social-links a i {
+    margin-right: 0.5rem; /* アイコンとテキストの間隔 */
+    font-size: 1.2rem; /* アイコンのサイズ */
+}
+
+.social-links a:hover {
+    background-color: #ff77a9; /* ホバーで少し濃いピンク */
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* モバイル対応の調整 */
+@media screen and (max-width: 768px) {
+    .social-links {
+        gap: 1rem; /* モバイルではリンク間のスペースを少し減らす */
+    }
+    .social-links a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    .social-links a i {
+        font-size: 1rem; /* モバイルでのアイコンサイズ */
+        margin-right: 0.3rem;
+    }
+}
+
+
+/* ===== **モバイル対応** ===== */
+@media screen and (max-width: 768px) {
+    /* **header h1 のモバイルフォントサイズを調整** */
+    header h1 {
+        font-size: 1.5rem; /* モバイルで小さくする */
+    }
+    /* BGMトグルボタンのモバイル時の調整 */
+    #bgm-toggle {
+        top: 10px; /* モバイルでの上からの距離 */
+        right: 10px; /* モバイルでの右からの距離 */
+        font-size: 0.8rem; /* 小さくする */
+        padding: 0.2rem 0.8rem; /* パディングも小さく */
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    nav a {
+        padding: 0.4rem 0.8rem; /* モバイルでのナビゲーションボタンのパディング調整 */
+        font-size: 0.9rem; /* モバイルでのナビゲーションボタンのフォントサイズ調整 */
+    }
+    .hero {
+        height: 200px;
+        padding: 1rem;
+        text-align: center;
+    }
+    .hero-text h2 {
+        font-size: 1.5rem;
+        color: #e969a7; /* モバイルでも薄いピンク */
+    }
+    .hero-text p {
+        color: #98fb98; /* モバイルでも薄い緑 */
+        font-size: 1rem; /* モバイルでの文字サイズも調整 */
+    }
+    .section {
+        margin: 1rem 0.5rem;
+        padding: 1rem;
+    }
+    .section h2 {
+        font-size: 1.4rem;
+    }
+    /* 各セクションの説明テキスト (モバイル調整) */
+    .section-description {
+        font-size: 0.95rem;
+    }
+    .pc-only {
+        display: none; /* モバイルではPC専用の改行を非表示 */
+    }
+
+    /* main内の一部のbuttonに適用されている可能性のあるスタイルを調整 */
+    /* ※HTMLでbutton要素が使われている箇所を確認し、意図しないスタイル適用を防ぐため、
+        必要に応じてより具体的なセレクタ（例: #contact-form button）に修正してください */
+    main button { /* 特定のbutton要素にのみ適用 */
+        width: auto; /* main内のボタンは100%幅にしない */
+        padding: 0.5rem 1rem; /* デフォルトのボタンと同じパディング */
+        font-size: 0.9rem;
+        margin: 0.5rem auto; /* 中央寄せ */
+        display: block; /* 中央寄せのためにブロック要素に */
+    }
+    /* contact.html用に追加したボタンのモバイル調整 */
+    .contact-form-section button[type="submit"] {
+        padding: 0.6rem 2rem;
+        font-size: 1rem;
+    }
+
+    /* contact.html用に追加したセクションのモバイル調整 */
+    .contact-form-section,
+    .phone-contact-section {
+        padding: 1.2rem;
+    }
+    .tel-info-box {
+        padding: 1rem;
+    }
+
+    /* **カレンダーのモバイル対応をさらに調整** */
+    .calendar th,
+    .calendar td {
+        height: 70px; /* モバイルでのセルの高さを少し減らす */
+        padding: 3px; /* パディングを少し減らす */
+        font-size: 0.75rem; /* 全体的に小さく */
+    }
+    .calendar th {
+        font-size: 0.8rem; /* モバイルの曜日ヘッダーのフォントサイズ */
+    }
+    .calendar .date {
+        font-size: 0.9rem; /* モバイルでの日付サイズを調整 */
+        padding-right: 2px; /* 右寄せ時のパディング */
+    }
+    .calendar .event {
+        font-size: 0.8rem; /* モバイルでのイベントテキストサイズを調整 */
+        padding: 0.1rem 0.2rem; /* パディングを調整 */
+    }
+    .calendar caption {
+        font-size: 1.3rem; /* モバイルでのキャプションサイズ */
+        padding: 0.8rem 0;
+    }
+    /* フッターのモバイル対応 */
+    .contact-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-left,
+    .contact-right {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+    .contact-right p {
+        text-align: center;
+    }
+    /* **電話番号リンクのモバイルフォントサイズを調整** */
+    .contact-tel a {
+        font-size: 2.2rem; /* モバイルでの表示サイズを調整 */
+    }
+    /* ===== Googleマップのレスポンシブ対応 ===== */
+    .map-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 比率 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin: 1rem 0;
+    }
+    .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* 幅を親に合わせる */
+        height: 100%; /* 高さも親に合わせる */
+        border: 0;
+    }
 }

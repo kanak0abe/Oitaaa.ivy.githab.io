@@ -1,59 +1,186 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>道の駅 Oitaaa</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>道の駅 Oitaaa</title>
+    <meta name="description" content="大分県の自然豊かな道の駅 Oitaaa。グルメ・イベント・アクセス情報満載！" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <header>
-    <h1>🌸道の駅 Oitaaa🌸</h1>
-    <nav>
-      <ul>
-        <li><a href="#facility">施設</a></li>
-        <li><a href="#gourmet">グルメ</a></li>
-        <li><a href="#event">イベント</a></li>
-        <li><a href="#access">アクセス</a></li>
-      </ul>
-    </nav>
-  </header>
+    <audio id="bgm" src="oitaaa_bgm_merged.mp3" loop preload="auto"></audio>
+    <a id="page-top"></a>
+    <header>
+        <h1>🌸道の駅 Oitaaa🌸</h1>
+        <button id="bgm-toggle" aria-pressed="false" aria-label="BGMのオンオフ切り替え">🔈 BGM オフ</button>
+        <nav>
+            <ul>
+                <li><a href="#hero">トップ</a></li>
+                <li><a href="facility.html">施設紹介</a></li>
+                <li><a href="shop.html">グルメ</a></li>
+                <li><a href="event.html">イベント</a></li>
+                <li><a href="access.html">アクセス</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h2>自然と笑顔が集まる</h2>
-      <p>～ゆったり、のんびり、ほっこり～</p>
-    </div>
-  </section>
-
-  <main>
-    <section id="facility" class="section">
-      <h2>🏠 施設紹介</h2>
-      <img src="img\oitaaa.png" alt="施設の外観" />
-      <p>広々とした駐車場、清潔なトイレ、休憩スペースも完備♪ 地元特産品が並ぶ直売所も大人気!！</p>
+    <section class="hero" id="hero">
+        <div class="hero-text">
+            <h2>自然と笑顔があつまる「道の駅　Oitaaa」</h2>
+            <p>～ゆったり、のんびり、ほっこり～</p>
+            <p>都会からほど近い、ここは道の駅Oitaaa</p>
+            <p>都会にいながら、自然を感じられる憩いの場所に！</p>
+            <p>美味しいグルメに、新鮮地元野菜をぜひご堪能下さい♪</p>
+        </div>
     </section>
 
-    <section id="gourmet" class="section">
-      <h2>🍙 特産グルメ 🥢</h2>
-      <img src="img/2soft.png" alt="グルメ" />
-      <p>人気の「豆乳ソフト」や地元の野菜ももたっぷり「だんご汁」はここでしか味わえない味！</p>
+    <main>
+        <section id="facility" class="section">
+            <h2>🏠 施設紹介 🏠</h2>
+            <div class="image-container">
+                <img src="img/oitaaa.png" alt="道の駅 Oitaaaの施設外観" class="shop-image"/>
+            </div>
+            <p>広々とした駐車場、清潔なトイレ、休憩スペースも完備～ 地元特産品の直売所も大人気！</p>
+            <p><a href="facility.html">施設案内はこちら</a></p>
+        </section>
+
+        <section id="gourmet" class="section">
+            <h2>🍙 グルメ＆ショップ 🥢</h2>
+            <div class="image-container">
+                <img src="img/2soft.png" alt="豆乳ソフトとだんご汁" class="shop-image"/>
+            </div>
+            <p>人気の「豆乳ソフト」や「だんご汁」は地元野菜たっぷりのほっこり料理！</p>
+            <p>地元の味噌や柚子胡椒、オリジナルパッケージのスイーツも大人気！</p>
+            <p><a href="shop.html">グルメ＆ショップ情報はこちら</a></p>
+        </section>
+
+        <section id="event" class="section">
+            <h2>🎉 イベント情報 🎪</h2>
+            <div class="image-container">
+                <img src="img/eve.png" alt="イベント開催の様子" class="shop-image"/>
+            </div>
+            <p>地元マルシェや手作り体験など、ファミリーで楽しめるイベントが盛りだくさん！</p>
+            <p><a href="event.html">イベント情報はこちら</a></p>
+        </section>
+
+        <section id="access" class="section">
+            <h2>🗺️ アクセス 🐾</h2>
+            <div class="image-container">
+                <img src="img/tizu1o.png" alt="地図" class="map-image" />
+            </div>
+            <p>Oitaaa ICから車で5分。JR Oitaaa駅から車で約10分です。EV充電も完備！</p>
+            <p><a href="access.html">アクセス情報はこちら</a></p>
+        </section>
+    </main>
+
+    <section class="contact-footer">
+        <div class="contact-wrapper">
+            <div class="contact-left">
+                <img src="img/ロゴ.png" alt="道の駅 Oitaaa ロゴ" class="footer-logo" />
+            </div>
+            <div class="contact-right">
+                <p><strong>道の駅 Oitaaa</strong><br/>Oitaaa市Oitaaa町1-2 K道10号沿い</p>
+                <p><strong>営業時間</strong><br/>営業時間：8:30～18:00<br/>飲食スペース：10:00～18:00（LO.17:30）</p>
+                <hr />
+                <div class="contact-tel">
+                    <a href="tel:0000111222">TEL. 0000-111-222</a>  //  クリックすると電話発信になるが、実際は繋がりません。
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="event" class="section">
-      <h2>🎉 イベント情報 🎪</h2>
-      <img src="img/imgpng.png" alt="イベント" />
-      <p>週末は地元マルシェやモノ作り体験など、ファミリーで楽しめるイベントが盛りだくさん！</p>
-    </section>
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/oitaaa_michinoeki/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://x.com/oitaaa_michinoeki" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-twitter"></i> X (旧Twitter)
+            </a>
+            <a href="https://www.facebook.com/oitaaa_michinoeki/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+        </div>
+        <p> &copy; 2025 道の駅 Oitaaa(架空の道の駅のHP)</p> // 各SNSに飛ぶが本物のアカウントはなし// ※BGMはトップページのみとしました。
+    </footer>
 
-    <section id="access" class="section">
-      <h2>🗺 アクセス 🐾</h2>
-      <img src="img/tizu1o.png" alt="アクセス地図" />
-      <p>Oitaa ICから車で5分。JR Oitaa駅から車で約10分です。広々した駐車場にEV充電も完備！</p>
-    </section>
-  </main>
+    <a href="#page-top" id="scroll-to-top" title="ページトップへ戻る">
+        <i class="fas fa-arrow-circle-up"></i>
+    </a>
 
-  <footer>
-    <p>&copy; 2025 道の駅 Oitaaa. All Rights Reserved.</p>
-  </footer>
+    <script>  // ※BGMはトップページのみとしました。
+        document.addEventListener('DOMContentLoaded', () => {
+            const bgm = document.getElementById('bgm');
+            const toggleBtn = document.getElementById('bgm-toggle');
+            bgm.volume = 0.15;
+
+            let bgmOnLocalStorage = localStorage.getItem('bgmOn') === 'true';
+
+            if (bgmOnLocalStorage) {
+                bgm.play().then(() => {
+                    toggleBtn.textContent = '🔊 BGM オン';
+                    toggleBtn.setAttribute('aria-pressed', 'true');
+                    console.log("BGM autoplay started successfully based on localStorage.");
+                }).catch(error => {
+                    toggleBtn.textContent = '🔈 BGM オフ';
+                    toggleBtn.setAttribute('aria-pressed', 'false');
+                    bgm.pause();
+                    localStorage.setItem('bgmOn', 'false');
+                    console.warn("BGM autoplay was prevented by browser:", error.message);
+                    console.info("Please click the BGM toggle button to play the audio.");
+                });
+            } else {
+                bgm.pause();
+                toggleBtn.textContent = '🔈 BGM オフ';
+                toggleBtn.setAttribute('aria-pressed', 'false');
+            }
+
+            toggleBtn.addEventListener('click', () => {
+                if (bgm.paused) {
+                    bgm.play().then(() => {
+                        toggleBtn.textContent = '🔊 BGM オン';
+                        toggleBtn.setAttribute('aria-pressed', 'true');
+                        localStorage.setItem('bgmOn', 'true');
+                        console.log("BGM started by user interaction.");
+                    }).catch(error => {
+                        console.error("Failed to play BGM after click:", error.message);
+                        alert("BGMの再生がブラウザによってブロックされました。別の操作後に再度お試しいただくか、ブラウザ設定をご確認ください。");
+                        toggleBtn.textContent = '🔈 BGM オフ';
+                        toggleBtn.setAttribute('aria-pressed', 'false');
+                        localStorage.setItem('bgmOn', 'false');
+                    });
+                } else {
+                    bgm.pause();
+                    toggleBtn.textContent = '🔈 BGM オフ';
+                    toggleBtn.setAttribute('aria-pressed', 'false');
+                    localStorage.setItem('bgmOn', 'false');
+                    console.log("BGM paused by user interaction.");
+                }
+            });
+
+            const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+            scrollToTopBtn.style.display = 'none';
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

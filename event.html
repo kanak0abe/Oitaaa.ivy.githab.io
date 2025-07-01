@@ -1,103 +1,347 @@
-<!-- event.html - イベント詳細ページ -->
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>イベント情報 - 道の駅 Oitaaa</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>イベント情報 - 道の駅 Oitaaa</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
+
 <body>
-  <header>
-    <h1>🎪 イベント情報</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="#spring">春</a></li>
-        <li><a href="#summer">夏</a></li>
-        <li><a href="#autumn">秋</a></li>
-        <li><a href="#winter">冬</a></li>
-      </ul>
-    </nav>
-  </header>
+    <a id="page-top"></a>
+    <header>
+        <h1>🎪 イベント情報</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="index.html#event">イベント</a></li>
+                <li><a href="#this-month-event">今月のイベント</a></li>
+                <li><a href="#monthly-regular-events">定例イベント</a></li>
+                <li><a href="#yearly-events">四季のイベント</a></li>
+                <li><a href="#calendar">イベントカレンダー</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <section id="spring" class="section">
-      <h2>🌸 春のイベント</h2>
-      <p>3月：さくら祭り、地元特産品販売<br>4月：手作り体験ワークショップ</p>
-    </section>
+    <main>
+        <section id="this-month-event" class="section">
+            <img src="img/cooking720.png" alt="poster" class="cooking-image" />
+            <h2>🎉 今月の目玉イベント</h2>
+            <h3>特別企画！クッキング教室開催！</h3>
+            <p style="text-align: left; margin-bottom: 1rem; color: #666;">
+                道の駅 Oitaaa では、毎月趣向を凝らしたイベントを開催しています。<br />
+                <strong>特別講師をお招きして、大分県の旬の食材を活かした「クッキング教室」を開催します！</strong><br />
+                全年代の皆さま、楽しく学べる内容です。お一人さまでもご家族の方とでも、ぜひぜひご参加ください！
+            </p>
 
-    <section id="summer" class="section">
-      <h2>🌻 夏のイベント</h2>
-      <p>7月：地元夏祭り<br>8月：夜市＆花火大会</p>
-    </section>
+            <div class="event">
+                <div class="month">7月20日(日)</div>
+                <div class="desc">特別講師による「梅雨を乗り切る元気ごはん」クッキング教室</div>
+            </div>
 
-    <section id="autumn" class="section">
-      <h2>🍂 秋のイベント</h2>
-      <p>10月：収穫祭・お芋掘り体験<br>11月：工芸品展示販売</p>
-    </section>
+            <h3 style="margin-top: 2rem;">講師のYouTubeはこちらをチェック！</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/2TtdK_23wXs" title="💗💛おだんご先生、改めましての自己紹介💛💗" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
 
-    <section id="winter" class="section">
-      <h2>⛄ 冬のイベント</h2>
-      <p>12月：クリスマスマルシェ<br>1月：新年もちつき大会</p>
-    </section>
+            <p style="margin-top: 1rem; font-size: 0.9em; color: #888;">
+                ※特別講師のYouTubeチャンネル「おだんごちゃんねる」より<br />
+            </p>
+        </section>
 
+        <section id="monthly-regular-events" class="section">
+            <h2>🗓️ 毎月開催の定例イベント</h2>
+            <ul>
+                <li>
+                    <strong>毎月1日：ファーストデー</strong><br />
+                    道の駅Oitaaaで使えるお得なクーポンを配布！
+                </li>
+                <li>
+                    <strong>毎月15日：真ん中デー</strong><br />
+                    旬の地元野菜・果物・スイーツをお得にゲット！
+                </li>
+                <li>
+                    <strong>毎週水曜日：Oitaaa感謝デー</strong><br />
+                    均一祭の開催
+                </li>
+            </ul>
+            <p style="margin-top: 1.5rem; font-size: 0.9em; color: #888;">
+                ※イベントの詳細は、SNSや道の駅内の掲示物、スタッフまでお気軽にお問い合わせください。
+            </p>
+        </section>
+
+        <section id="yearly-events" class="section">
+            <h2>🌸🌻四季のイベント🍂⛄</h2>
+
+            <section id="spring" class="section sub-season-section">
+                <h3>🌸 春のイベント</h3>
+                <div class="event">
+                    <div class="month">3月</div>
+                    <div class="desc">さくら祭</div>
+                </div>
+                <div class="event">
+                    <div class="month">4月</div>
+                    <div class="desc">welcome新年度</div>
+                </div>
+                <div class="event">
+                    <div class="month">5月</div>
+                    <div class="desc">手作り体験ワークショップ</div>
+                </div>
+            </section>
+
+            <section id="summer" class="section sub-season-section">
+                <h3>🌻 夏のイベント</h3>
+                <div class="event">
+                    <div class="month">6月</div>
+                    <div class="desc">梅雨にアジサイ</div>
+                </div>
+                <div class="event">
+                    <div class="month">7月</div>
+                    <div class="desc">七夕祭・特別講師によるクッキング教室</div>
+                </div>
+                <div class="event">
+                    <div class="month">8月</div>
+                    <div class="desc">花火大会</div>
+                </div>
+            </section>
+
+            <section id="autumn" class="section sub-season-section">
+                <h3>🍂 秋のイベント</h3>
+                <div class="event">
+                    <div class="month">9月</div>
+                    <div class="desc">新米・お米フェスタ</div>
+                </div>
+                <div class="event">
+                    <div class="month">10月</div>
+                    <div class="desc">ハロウィン祭</div>
+                </div>
+                <div class="event">
+                    <div class="month">11月</div>
+                    <div class="desc">紅葉ウォーク</div>
+                </div>
+            </section>
+
+            <section id="winter" class="section sub-season-section">
+                <h3>⛄ 冬のイベント</h3>
+                <div class="event">
+                    <div class="month">12月</div>
+                    <div class="desc">クリスマスフェスタ</div>
+                </div>
+                <div class="event">
+                    <div class="month">1月</div>
+                    <div class="desc">新年もちつき大会＆福袋販売</div>
+                </div>
+                <div class="event">
+                    <div class="month">2月</div>
+                    <div class="desc">恵方巻＆バレンタインフェスタ</div>
+                </div>
+            </section>
+        </section>
+
+        <section id="calendar" class="section">
+            <table class="calendar">
+                <caption>📅 7月イベントカレンダー</caption>
+                <thead>
+                    <tr>
+                        <th>日</th>
+                        <th>月</th>
+                        <th>火</th>
+                        <th>水</th>
+                        <th>木</th>
+                        <th>金</th>
+                        <th>土</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sunday">
+                            <div class="date"></div>
+                        </td>
+                        <td>
+                            <div class="date"></div>
+                        </td>
+                        <td>
+                            <div class="date">1</div>
+                            <div class="event">ファーストデー</div>
+                        </td>
+                        <td>
+                            <div class="date">2</div>
+                            <div class="event">均一デー</div>
+                        </td>
+                        <td>
+                            <div class="date">3</div>
+                        </td>
+                        <td>
+                            <div class="date">4</div>
+                        </td>
+                        <td class="saturday">
+                            <div class="date">5</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sunday">
+                            <div class="date">6</div>
+                            <div class="event">七夕祭</div>
+                        </td>
+                        <td>
+                            <div class="date">7</div>
+                            <div>七夕</div>
+                        </td>
+                        <td>
+                            <div class="date">8</div>
+                        </td>
+                        <td>
+                            <div class="date">9</div>
+                            <div class="event">均一デー</div>
+                        </td>
+                        <td>
+                            <div class="date">10</div>
+                        </td>
+                        <td>
+                            <div class="date">11</div>
+                        </td>
+                        <td class="saturday">
+                            <div class="date">12</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sunday">
+                            <div class="date">13</div>
+                        </td>
+                        <td>
+                            <div class="date">14</div>
+                        </td>
+                        <td>
+                            <div class="date">15</div>
+                            <div class="event">真ん中デー</div>
+                        </td>
+                        <td>
+                            <div class="date">16</div>
+                            <div class="event">均一デー</div>
+                        </td>
+                        <td>
+                            <div class="date">17</div>
+                        </td>
+                        <td>
+                            <div class="date">18</div>
+                        </td>
+                        <td class="saturday">
+                            <div class="date">19</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sunday">
+                            <div class="date">20</div>
+                            <div class="event">特別講師によるクッキング教室</div>
+                        </td>
+                        <td class="holiday">
+                            <div class="date">21</div>
+                            <div>海の日</div>
+                        </td>
+                        <td>
+                            <div class="date">22</div>
+                        </td>
+                        <td>
+                            <div class="date">23</div>
+                            <div class="event">均一デー</div>
+                        </td>
+                        <td>
+                            <div class="date">24</div>
+                        </td>
+                        <td>
+                            <div class="date">25</div>
+                        </td>
+                        <td class="saturday">
+                            <div class="date">26</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sunday">
+                            <div class="date">27</div>
+                        </td>
+                        <td>
+                            <div class="date">28</div>
+                        </td>
+                        <td>
+                            <div class="date">29</div>
+                        </td>
+                        <td>
+                            <div class="date">30</div>
+                            <div class="event">均一デー</div>
+                        </td>
+                        <td>
+                            <div class="date">31</div>
+                        </td>
+                        <td>
+                            <div class="date"></div>
+                        </td>
+                        <td class="saturday">
+                            <div class="date"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: #555;">
+                ※イベント内容は予告なく変更される場合があります。
+            </p>
+        </section>
+    </main>
+<footer>
     <div class="back-link">
-      <a href="index.html">← ホームへ戻る</a>
+      <a href="index.html"><i class="fas fa-home"></i> ホームへ戻る</a>
     </div>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 道の駅 Oitaaa. All Rights Reserved.</p>
-  </footer>
+</footer>
+    <footer>
+        <p>© 2025 道の駅 Oitaaa(架空の道の駅のHP)</p>
+    </footer>
+
+    <a href="#page-top" id="scroll-to-top" title="ページトップへ戻る">
+        <i class="fas fa-arrow-circle-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const today = new Date();
+            const currentMonth = today.getMonth() + 1; // getMonth()は0から始まるため+1
+            const currentDay = today.getDate();
+
+            // 現在の月が7月の場合に日付をハイライト
+            if (currentMonth === 7) {
+                const calendarCells = document.querySelectorAll('#calendar table.calendar td');
+                calendarCells.forEach(cell => {
+                    const dateDiv = cell.querySelector('.date');
+                    // 日付があるセルのみ処理し、今日の日付と一致すればハイライト
+                    if (dateDiv && parseInt(dateDiv.textContent) === currentDay) {
+                        cell.classList.add('today');
+                    }
+                });
+            }
+
+            // スクロール to トップボタンの表示/非表示
+            const scrollToTopBtn = document.getElementById('scroll-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) { // 300pxスクロールしたら表示
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault(); // デフォルトのアンカーリンクの動作をキャンセル
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // スムーズスクロール
+                });
+            });
+        });
+    </script>
 </body>
-</html>
 
-
-<!-- contact.html - お問い合わせページ -->
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お問い合わせ - 道の駅 Oitaaa</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>📬 お問い合わせ</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="event.html">イベント情報</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="section">
-      <h2>お気軽にお問い合わせください</h2>
-      <form action="#" method="post">
-        <label for="name">お名前:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="email">メールアドレス:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="message">お問い合わせ内容:</label><br>
-        <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-        <button type="submit">送信</button>
-      </form>
-    </section>
-
-    <div class="back-link">
-      <a href="index.html">← ホームへ戻る</a>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 道の駅 Oitaaa. All Rights Reserved.</p>
-  </footer>
-</body>
 </html>
