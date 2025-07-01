@@ -20,7 +20,7 @@
                 <li><a href="shop.html">ショップ</a></li>
                 <li><a href="event.html">イベント</a></li>
                 <li><a href="access.html">アクセス</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
+                <li><a href="contact.html" class="active">お問い合わせ</a></li>
             </ul>
         </nav>
     </header>
@@ -78,6 +78,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const scrollToTopBtn = document.getElementById('scroll-to-top');
+            scrollToTopBtn.style.display = 'none'; // 初期状態では非表示
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300) {
