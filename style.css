@@ -85,10 +85,10 @@ nav a:hover {
 .hero-text h2 {
     font-size: 2.2rem;
     margin: 0;
-    color: #ed6cc2; /* 薄いピンクに変更 */
+    color: #ea37ae; /* 薄いピンクに変更 */
 }
 .hero-text p {
-    color: #e3d01f; /* 薄い緑に変更 */
+    color: #f06689; /* 薄い緑に変更 */
     font-size: 1.4rem; /* 「～ゆったり～」の文字を少し大きくしました */
 }
 
