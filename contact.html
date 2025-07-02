@@ -72,8 +72,7 @@
     </footer>
 
     <a href="#page-top" id="scroll-to-top" title="ページトップへ戻る">
-        <i class="fas fa-arrow-circle-up"></i>
-    </a>
+        <i class="fas fa-arrow-up"></i> </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -82,7 +81,7 @@
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300) {
-                    scrollToTopBtn.style.display = 'block';
+                    scrollToTopBtn.style.display = 'flex'; // 'block'から'flex'に変更しました
                 } else {
                     scrollToTopBtn.style.display = 'none';
                 }
