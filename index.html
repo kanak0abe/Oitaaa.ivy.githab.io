@@ -11,7 +11,9 @@
 </head>
 <body>
     <audio id="bgm" src="oitaaa_bgm_merged.mp3" loop preload="auto"></audio>
+    
     <a id="page-top"></a>
+    
     <header>
         <h1>🌸道の駅 Oitaaa🌸</h1>
         <button id="bgm-toggle" aria-pressed="false" aria-label="BGMのオンオフ切り替え">🔈 BGM オフ</button>
@@ -39,11 +41,11 @@
 
     <main>
         <section id="facility" class="section">
-            <h2>🏠 施設紹介 🏠</h2>
+            <h2>🏠 施設紹介 ♨</h2>
             <div class="image-container">
                 <img src="img/oitaaa.png" alt="道の駅 Oitaaaの施設外観" class="shop-image"/>
             </div>
-            <p>広々とした駐車場、清潔なトイレ、休憩スペースも完備～ 地元特産品の直売所も大人気！</p>
+            <p>広々とした駐車場、清潔なトイレ、休憩スペースも完備～ 地元特産品の直売所も大人気！　無料の足湯もあります！</p>
             <p><a href="facility.html">施設案内はこちら</a></p>
         </section>
 
@@ -93,6 +95,12 @@
     </section>
 
     <footer>
+        <div class="footer-nav">
+            <a href="#page-top" class="footer-to-top" title="ページトップへ戻る">
+            トップに戻る <i class="fas fa-arrow-up"></i>
+        </a>
+        </div>
+
         <div class="social-links">
             <a href="https://www.instagram.com/oitaaa_michinoeki/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-instagram"></i> Instagram
@@ -104,46 +112,53 @@
                 <i class="fab fa-facebook-f"></i> Facebook
             </a>
         </div>
-        <p> &copy; 2025 道の駅 Oitaaa(架空の道の駅のHP)</p>
+
+        <p class="copyright">&copy; 2025 道の駅 Oitaaa(架空の道の駅HP)</p>
     </footer>
 
     <a href="#page-top" id="scroll-to-top" title="ページトップへ戻る">
-        <i class="fas fa-arrow-circle-up"></i>
-    </a>
+        <i class="fas fa-arrow-up"></i> </a>
 
-    <script>  // ※BGMはトップページのみ、電話の発信はできるが、実際にはかかりません、SNSも各リンクに飛びますが、実際のアカウントはなしとしております。
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const bgm = document.getElementById('bgm');
             const toggleBtn = document.getElementById('bgm-toggle');
-            bgm.volume = 0.15;
+            bgm.volume = 0.15; // BGMの音量設定
 
+            // localStorageからBGMの状態を読み込む
             let bgmOnLocalStorage = localStorage.getItem('bgmOn') === 'true';
 
+            // ページロード時のBGM再生制御
             if (bgmOnLocalStorage) {
+                // localStorageがtrueの場合、再生を試みる
                 bgm.play().then(() => {
                     toggleBtn.textContent = '🔊 BGM オン';
                     toggleBtn.setAttribute('aria-pressed', 'true');
                     console.log("BGM autoplay started successfully based on localStorage.");
                 }).catch(error => {
+                    // 自動再生がブロックされた場合
                     toggleBtn.textContent = '🔈 BGM オフ';
                     toggleBtn.setAttribute('aria-pressed', 'false');
-                    bgm.pause();
-                    localStorage.setItem('bgmOn', 'false');
+                    bgm.pause(); // 念のため一時停止
+                    localStorage.setItem('bgmOn', 'false'); // localStorageもfalseに更新
                     console.warn("BGM autoplay was prevented by browser:", error.message);
                     console.info("Please click the BGM toggle button to play the audio.");
                 });
             } else {
+                // localStorageがfalseの場合、停止状態にする
                 bgm.pause();
                 toggleBtn.textContent = '🔈 BGM オフ';
                 toggleBtn.setAttribute('aria-pressed', 'false');
             }
 
+            // BGMトグルボタンのクリックイベント
             toggleBtn.addEventListener('click', () => {
                 if (bgm.paused) {
+                    // 現在停止中なら再生
                     bgm.play().then(() => {
                         toggleBtn.textContent = '🔊 BGM オン';
                         toggleBtn.setAttribute('aria-pressed', 'true');
-                        localStorage.setItem('bgmOn', 'true');
+                        localStorage.setItem('bgmOn', 'true'); // localStorageを更新
                         console.log("BGM started by user interaction.");
                     }).catch(error => {
                         console.error("Failed to play BGM after click:", error.message);
@@ -153,33 +168,48 @@
                         localStorage.setItem('bgmOn', 'false');
                     });
                 } else {
+                    // 現在再生中なら停止
                     bgm.pause();
                     toggleBtn.textContent = '🔈 BGM オフ';
                     toggleBtn.setAttribute('aria-pressed', 'false');
-                    localStorage.setItem('bgmOn', 'false');
+                    localStorage.setItem('bgmOn', 'false'); // localStorageを更新
                     console.log("BGM paused by user interaction.");
                 }
             });
 
+            // 画面右下に固定される「トップへ戻る」ボタンのJavaScript
             const scrollToTopBtn = document.getElementById('scroll-to-top');
 
-            scrollToTopBtn.style.display = 'none';
-
+            // ページスクロール時にボタンの表示を切り替える
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
+                if (window.scrollY > 300) { // 300pxスクロールしたら表示
                     scrollToTopBtn.style.display = 'block';
                 } else {
                     scrollToTopBtn.style.display = 'none';
                 }
             });
 
+            // クリックでスムーズスクロール
             scrollToTopBtn.addEventListener('click', (e) => {
-                e.preventDefault();
+                e.preventDefault(); // デフォルトのアンカーリンク動作を無効化
                 window.scrollTo({
                     top: 0,
-                    behavior: 'smooth'
+                    behavior: 'smooth' // スムーズスクロール
                 });
             });
+
+            // フッター内の「トップに戻る」リンクのJavaScript
+            const footerToTopLink = document.querySelector('.footer-to-top');
+
+            if (footerToTopLink) { // footerToTopLinkが存在する場合のみイベントリスナーを設定
+                footerToTopLink.addEventListener('click', (e) => {
+                    e.preventDefault(); // デフォルトのアンカーリンク動作を無効化
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth' // スムーズスクロール
+                    });
+                });
+            }
         });
     </script>
 </body>
